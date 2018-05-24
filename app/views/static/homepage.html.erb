@@ -1,3 +1,5 @@
-<div class="jumbotron">
-Posts
-</div>
+<% if admin_types.include?(current_user.try(:type)) %>
+	<%= render 'admin' %>
+<% else %>
+	<%= render 'employee' %>
+<% end %>
